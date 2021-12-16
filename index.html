@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Igor Mariano">
+    <meta name="keywords" content="calculadora, gorjeta">
+    <meta name="description" content="Calcule a gorjeta do estabelecimento com esta calculadora online e grátis!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Calculadora de Gorjeta - HexaLab</title>
+</head>
+<body>
+    
+    <main role="main">
+        <form>
+            <fieldset>
+                <label for="valor_pedido">Digite o valor total do pedido <span class="obrigatorio">*</span></label>
+                <input class="interativo" type="number" id="valor_pedido" name="valor_pedido" step="0.01" min="0.01" placeholder="Digite o valor aqui" required>
+            </fieldset>
+
+            <fieldset id="gorjeta_opc">
+                <legend>Quanto quer dar de gorjeta? <span class="obrigatorio">*</span></legend>
+
+                <div class="linha">
+                    <input type="radio" id="5porc" name="valor_gorjeta" value="5">
+                    <label for="5porc">5%</label>
+
+                    <input type="radio" id="10porc" name="valor_gorjeta" value="10">
+                    <label for="10porc">10%</label>
+
+                    <input type="radio" id="15porc" name="valor_gorjeta" value="15">
+                    <label for="15porc">15%</label>
+
+                    <input type="radio" id="25porc" name="valor_gorjeta" value="25">
+                    <label for="25porc">25%</label>
+
+                    <input class="interativo" id="gorjeta_personalizada" type="number" placeholder="Personalize aqui">
+                </div><!--linha-->
+            </fieldset><!--#gorjeta_opc-->
+
+            <fieldset>
+                <label for="num_pessoas">Quantas pessoas irão pagar? <span class="obrigatorio">*</span></label>
+                <input class="interativo" type="number" id="num_pessoas" name="num_pessoas" pattern="[0-9]+" step="1" min="1" placeholder="Digite o valor aqui" required>
+            </fieldset>
+        </form>
+
+        <div id="results">
+            <div>
+                <label for="gorjeta_valor">Valor total da gorjeta</label>
+                <input id="gorjeta_valor" type="text" disabled>
+            </div>
+
+            <div>
+                <label for="gorjeta_pessoa">Valor que cada pessoa irá pagar de gorjeta</label>
+                <input id="gorjeta_pessoa" type="text" value="0,00" disabled>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
